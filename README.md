@@ -2,8 +2,8 @@
 
 # 演示
 [前往](https://lzys522.cn/wx/)
+![输入图片说明](wx-play-ui/public/23041684646044_.pic.jpg)
 
-![输入图片说明](https://foruda.gitee.com/images/1684642072176147713/34af0044_5151444.png "屏幕截图")
 
 
 #### 介绍
