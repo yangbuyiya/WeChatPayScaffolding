@@ -2,7 +2,7 @@
 
 # 演示
 [前往](https://lzys522.cn/wx/)
-![输入图片说明](wx-play-ui/public/23041684646044_.pic.jpg)
+![演示](wx-play-ui/public/23041684646044_.pic.jpg)
 
 
 
