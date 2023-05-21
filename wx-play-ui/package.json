@@ -1,0 +1,35 @@
+{
+  "description": "杨不易呀前端微信支付",
+  "author": "杨不易呀",
+  "license": "MIT",
+  "name": "wx-play-ui",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@vueuse/core": "10.1.2",
+    "axios": "1.4.0",
+    "core-js": "^3.6.5",
+    "element-plus": "^2.3.4",
+    "qrcode.vue": "^3.4.0",
+    "sass": "^1.61.0",
+    "vue": "^3.2.47",
+    "vue-router": "4.2.0"
+  },
+  "devDependencies": {
+    "unplugin-vue-components": "^0.24.1",
+    "vite": "4.2.0",
+    "@vitejs/plugin-vue": "4.2.3",
+    "@vue/compiler-sfc": "3.3.2",
+    "prettier": "^2.8.8",
+    "sass": "1.62.1",
+    "unplugin-auto-import": "0.15.3",
+    "vite-plugin-compression": "0.5.1",
+    "vite-plugin-vue-setup-extend": "0.4.0"
+  }
+}
