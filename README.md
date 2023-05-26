@@ -2,7 +2,7 @@
 
 # PC端演示
 [前往](https://lzys522.cn/wx/)
-![输入图片说明](wx-play-ui/public/image.png)
+![输入图片说明](doc/img/image2.png)
 
 # uniapp小程序演示
 ![小程序二维码](doc/img/img.png)
