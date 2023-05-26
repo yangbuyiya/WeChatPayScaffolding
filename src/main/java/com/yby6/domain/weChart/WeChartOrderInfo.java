@@ -1,6 +1,7 @@
+// yangbuyi Copyright (c) https://yby6.com 2023.
+
 package com.yby6.domain.weChart;
 
-import com.sun.org.apache.xpath.internal.operations.Or;
 import lombok.Data;
 
 import java.util.List;

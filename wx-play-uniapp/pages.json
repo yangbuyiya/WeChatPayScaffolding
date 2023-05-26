@@ -1,0 +1,66 @@
+{
+  "pages": [
+    //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+//    {
+//      "path": "pages/mine/mine",
+//      "static": {
+//        "navigationBarTitleText": "uni-app"
+//      }
+//    },
+    {
+      "path": "pages/index/index",
+      "style": {
+        "navigationBarTitleText": "杨不易呀微信支付小程序Demo",
+		     "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/order/order",
+      "style": {
+        "navigationBarTitleText": "",
+        "enablePullDownRefresh": true
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "演示",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#1296db",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+//      {
+//        "pagePath": "pages/mine/mine",
+//        "iconPath": "static/icon/fun.png",
+//        "selectedIconPath": "static/icon/fun-selected.png",
+//        "text": "登录"
+//      },
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/icon/fun.png",
+        "selectedIconPath": "static/icon/fun-selected.png",
+        "text": "购买课程"
+      },
+      {
+        "pagePath": "pages/order/order",
+        "iconPath": "static/icon/order_1.png",
+        "selectedIconPath": "static/icon/order_2.png",
+        "text": "我的订单"
+      }
+    ]
+  },
+  "easycom": {
+    "autoscan": true,
+    //是否自动扫描组件
+    "custom": {
+      //自定义扫描规则
+      "^u-(.*)": "@/uni_modules/uview-ui/components/u-$1/u-$1.vue"
+    }
+  },
+  "uniIdRouter": {}
+}

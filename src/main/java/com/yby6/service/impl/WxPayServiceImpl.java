@@ -1,3 +1,5 @@
+// yangbuyi Copyright (c) https://yby6.com 2023.
+
 package com.yby6.service.impl;
 
 import com.github.wxpay.sdk.WXPayUtil;
@@ -68,6 +70,7 @@ public class WxPayServiceImpl implements WxPayService {
     @Resource
     private CloseableHttpClient wxPayNoSignClient;
 
+
     private final ReentrantLock lock = new ReentrantLock();
 
     /**
@@ -90,7 +93,7 @@ public class WxPayServiceImpl implements WxPayService {
     public Map<String, Object> nativePay(Long productId) throws Exception {
         log.info("生成订单");
         // 生成订单
-        OrderInfo orderInfo = orderInfoService.createOrderByProductId(productId);
+        OrderInfo orderInfo = orderInfoService.createOrderByProductId(productId, null);
         String codeUrl = orderInfo.getCodeUrl();
         if (!StringUtils.isEmpty(codeUrl)) {
             log.info("订单已存在，二维码已保存");
@@ -212,6 +215,14 @@ public class WxPayServiceImpl implements WxPayService {
     private void closeOrder(String orderNo) throws IOException {
         // step 1 微信特别提醒 在关闭订单之前查询一下订单在微信服务当中的状态
         WeChartOrderInfo state = selectOrderInfo(orderNo);
+
+        if (null == state || state.getTrade_state() == null) {
+            //更新本地订单状态
+            orderInfoService.lambdaUpdate().eq(OrderInfo::getOrderNo, orderNo).set(OrderInfo::getOrderStatus, OrderStatus.CLOSED.getType()).update();
+//            throw new RuntimeException("没找到订单...");
+            return;
+        }
+
         // 还未支付才能进行取消订单
         if (state.getTrade_state().equals(OrderStatus.NOTPAY.name())) {
             // step 2 进行调用微信关闭订单接口
@@ -286,6 +297,14 @@ public class WxPayServiceImpl implements WxPayService {
 
         //调用微信支付查单接口
         WeChartOrderInfo chartOrderInfo = this.selectOrderInfo(orderNo);
+
+        log.info("查询订单接口:{}", chartOrderInfo);
+        // 如果没查到订单则超时处理
+        if (null == chartOrderInfo.getAppid()) {
+            orderInfoService.lambdaUpdate().eq(OrderInfo::getOrderNo, orderNo).set(OrderInfo::getOrderStatus, OrderStatus.CLOSED.getType()).update();
+            return;
+        }
+
         //获取微信支付端的订单状态
         String tradeState = chartOrderInfo.getTrade_state();
 
@@ -387,36 +406,6 @@ public class WxPayServiceImpl implements WxPayService {
 
     }
 
-    private void old(String orderNo, String reason) throws IOException {
-        // 查询订单信息
-        OrderInfo orderInfo = this.orderInfoService.lambdaQuery().eq(OrderInfo::getOrderNo, orderNo).one();
-
-        log.info("申请退款订单号：{} ， 退款原因: {}", orderNo, reason);
-        String url = wxPayConfig.getDomain().concat(WxApiType.DOMESTIC_REFUNDS.getType());
-        HttpPost httpPost = new HttpPost(url);
-        Map<String, Object> paramsMap = new HashMap<>(1);
-        paramsMap.put("out_trade_no", orderNo);
-        paramsMap.put("out_refund_no", orderNo + "_" + "refund");
-        paramsMap.put("reason", reason);
-        paramsMap.put("notify_url", wxPayConfig.getNotifyDomain().concat(WxNotifyType.REFUND_NOTIFY.getType()));
-        // 金额信息
-        HashMap<String, Object> amount = new HashMap<>();
-        amount.put("refund", orderInfo.getTotalFee()); // 退款金额
-        amount.put("total", orderInfo.getTotalFee()); // 原退款金额
-        amount.put("currency", "CNY"); // 退款金额
-        paramsMap.put("amount", amount);
-        String jsonParams = new Gson().toJson(paramsMap);
-        log.info("请求参数 ===> {}", jsonParams);
-        StringEntity entity = new StringEntity(jsonParams, "utf-8");
-        entity.setContentType("application/json");
-        httpPost.setEntity(entity);
-        httpPost.setHeader("Accept", "application/json");
-        CloseableHttpResponse response = wxPayClient.execute(httpPost);
-        Map bodyParams = buildBodyParams(response, Map.class);
-        log.info("查询订单响应, {}", bodyParams);
-        response.close();
-    }
-
     /**
      * 查询退款订单
      *
@@ -461,9 +450,6 @@ public class WxPayServiceImpl implements WxPayService {
      * 检查退款订单状态
      * 场景：用户退款成功 由于微信发送退款通知给到商户系统 商户系统因部分原因不能处理，
      * 那么商户应该主动调用微信查询退款单接口进行更新订单状态
-     *
-     * @param refundNo
-     * @throws Exception
      */
     @Transactional(rollbackFor = Exception.class)
     @Override
@@ -556,11 +542,10 @@ public class WxPayServiceImpl implements WxPayService {
         } else {
             throw new RuntimeException("不支持的账单类型");
         }
-        url = wxPayConfig.getDomain().concat(url)
-                .concat("?bill_date=").concat(billDate)
-                .concat("&sub_mchid=").concat(wxPayConfig.getMchId())
-//                .concat("&bill_type=ALL")
-        ;
+
+        url = wxPayConfig.getDomain().concat(url).concat("?bill_date=").concat(billDate)
+//                .concat("&sub_mchid=").concat(wxPayConfig.getMchId())
+                .concat("&bill_type=ALL").concat("&tar_type=GZIP");
         // 创建远程Get 请求对象
         log.info("url:{}", url);
         HttpGet httpGet = new HttpGet(url);
@@ -613,7 +598,7 @@ public class WxPayServiceImpl implements WxPayService {
         log.info("生成订单");
 
         //生成订单
-        OrderInfo orderInfo = orderInfoService.createOrderByProductId(productId);
+        OrderInfo orderInfo = orderInfoService.createOrderByProductId(productId, null);
         String codeUrl = orderInfo.getCodeUrl();
         if (orderInfo != null && !StringUtils.isEmpty(codeUrl)) {
             log.info("订单已存在，二维码已保存");
@@ -727,7 +712,7 @@ public class WxPayServiceImpl implements WxPayService {
         } else if (statusCode == 404) { //处理成功，无返回Body
             log.info("没找到订单...");
         } else {
-            log.info("响应：{}, {}",response.getEntity(),response.getStatusLine());
+            log.info("响应：{}, {}", response.getEntity(), response.getStatusLine());
             log.info("失败,响应码 = " + statusCode + ",返回结果 = " + bodyAsString);
             throw new IOException("request failed");
         }

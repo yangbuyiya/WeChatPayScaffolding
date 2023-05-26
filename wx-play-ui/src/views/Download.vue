@@ -1,3 +1,5 @@
+<!-- yangbuyi Copyright (c) https://yby6.com 2023. -->
+
 <template>
   <div class="bg-fa of">
     <section id="index" class="container">

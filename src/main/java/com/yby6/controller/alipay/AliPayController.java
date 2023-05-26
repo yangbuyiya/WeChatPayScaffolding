@@ -1,3 +1,5 @@
+// yangbuyi Copyright (c) https://yby6.com 2023.
+
 package com.yby6.controller.alipay;
 
 import cn.hutool.extra.qrcode.QrCodeUtil;

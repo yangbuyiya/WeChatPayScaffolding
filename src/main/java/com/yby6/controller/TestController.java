@@ -1,7 +1,8 @@
+// yangbuyi Copyright (c) https://yby6.com 2023.
+
 package com.yby6.controller;
 
 
-import cn.dev33.satoken.util.SaTokenConsts;
 import com.yby6.config.R;
 import com.yby6.config.WxPayConfig;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,13 +25,4 @@ public class TestController {
         return R.ok().data("mchId", mchId);
     }
 
-
-    // 浏览器访问测试： http://localhost:8081
-    @RequestMapping({"/", "/index"})
-    public String index() {
-        return "<br />"
-                + "<h1 style='text-align: center;'>资源页 （登录后才可进入本页面） </h1>"
-                + "<hr/>"
-                + "<p style='text-align: center;'> Sa-Token " + SaTokenConsts.VERSION_NO + " </p>";
-    }
 }

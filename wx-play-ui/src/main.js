@@ -1,3 +1,5 @@
+// yangbuyi Copyright (c) https://yby6.com 2023.
+
 // main.ts
 import { createApp } from 'vue'
 import ElementPlus from 'element-plus'

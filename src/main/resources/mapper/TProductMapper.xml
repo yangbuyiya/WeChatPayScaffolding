@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- yangbuyi Copyright (c) https://yby6.com 2023. -->
+
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.yby6.mapper.TProductMapper">
   <resultMap id="BaseResultMap" type="com.yby6.domain.TProduct">

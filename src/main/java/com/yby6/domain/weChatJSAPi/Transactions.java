@@ -1,3 +1,5 @@
+// yangbuyi Copyright (c) https://yby6.com 2023.
+
 package com.yby6.domain.weChatJSAPi;
 
 import com.fasterxml.jackson.annotation.JsonProperty;

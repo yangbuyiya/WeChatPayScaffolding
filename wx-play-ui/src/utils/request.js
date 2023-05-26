@@ -1,3 +1,5 @@
+// yangbuyi Copyright (c) https://yby6.com 2023.
+
 import axios from 'axios'
 import { ElMessage } from 'element-plus'
 

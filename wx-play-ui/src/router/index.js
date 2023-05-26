@@ -1,3 +1,5 @@
+// yangbuyi Copyright (c) https://yby6.com 2023.
+
 import {createRouter, createWebHistory} from "vue-router";
 // // 引入组件
 import Index from '../views/index'

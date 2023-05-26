@@ -1,3 +1,5 @@
+// yangbuyi Copyright (c) https://yby6.com 2023.
+
 package com.yby6.util;
 
 import org.apache.http.Consts;
