@@ -1,8 +1,11 @@
 # 从零玩转微信支付
 
 ### 介绍
-使用微信官方文档对接微信支付
-内置使用IJPay-AliPay对接支付宝懒得自己搞了
+使用微信官方文档对接微信支付 
+
+内置vue3+vite前端使用微信官方原生接口对接native v3 v2 
+
+内置小程序端 使用快速对接神器IJPay对接jsapi v3
 
 同步更新： 码云[GITEE](https://gitee.com/yangbuyi/wxDemo) 外国 [GITHUB](https://github.com/yangbuyiya/wxDemo)
 
