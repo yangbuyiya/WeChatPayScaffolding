@@ -6,8 +6,7 @@ import { ElMessage } from 'element-plus'
 // 创建axios实例
 const service = axios.create({
     baseURL: '/wx-api', // 部署 api 的 base_url
-    // baseURL: 'https://lzys522.cn/wx-api', // 部署 api 的 base_url
-    // baseURL: 'https://34i33045l8.oicp.vip', // api 的 base_url
+    // baseURL: 'https://34i33045l8.oicp.vip', // 本地 api 的 base_url
     timeout: 20000 // 请求超时时间
 })
 
