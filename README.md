@@ -1,14 +1,15 @@
 # 从零玩转微信支付
 
-# 介绍
+### 介绍
 使用微信官方文档对接微信支付
 内置使用IJPay-AliPay对接支付宝懒得自己搞了
 
-#  软件架构
-前端 vue3+vite+饿了么plus
-后端 boot 2.x + mybatis plus + mysql
+###  软件架构
+<p> 前端 vue3 + vite + element plus
+<p> 小程序 uniapp
+<p> 后端 boot 2.x + mybatis plus + mysql
 
-#  安装教程
+###  安装教程
 1. 将商户证书全部复制到**resources**目录下
 2. 下载微信平台证书（不是商户证书）
 
