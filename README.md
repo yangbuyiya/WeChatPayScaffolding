@@ -4,6 +4,8 @@
 使用微信官方文档对接微信支付
 内置使用IJPay-AliPay对接支付宝懒得自己搞了
 
+同步更新： 码云[GITEE](https://gitee.com/yangbuyi/wxDemo) 外国 [GITHUB](https://github.com/yangbuyiya/wxDemo)
+
 ###  软件架构
 <p> 前端 vue3 + vite + element plus
 <p> 小程序 uniapp
