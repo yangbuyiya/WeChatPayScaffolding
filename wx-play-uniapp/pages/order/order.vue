@@ -1,42 +1,62 @@
-<!-- yangbuyi Copyright (c) https://yby6.com 2023. -->
-
 <template>
   <view class="app-container">
     <u-notice-bar color="red" text="注意：小程序可查看有限只渲染近50条支付信息,完整请前往PC端!!!"></u-notice-bar>
 
     <view class="PaymentChannel_title">
-      <u-tooltip text="PC端微信支付系统: https://lzys522.cn/wx" copyText="https://lzys522.cn/wx" overlay></u-tooltip>
+      <u-tooltip text="PC端微信支付系统: https://lzys522.cn/wx" copyText="https://lzys522.cn/wx"
+                 overlay></u-tooltip>
+    </view>
+    <view class="PaymentChannel_title">
+      注意：0.4以上,支付成功后可在订单列表进行退款.
     </view>
 
     <u-loading-page :loading="loading">
     </u-loading-page>
 
+    <view>
+      <u-subsection
+          :list="queryList"
+          mode="button"
+          :current="currentSubsection"
+          @change="change1"
+      ></u-subsection>
+    </view>
+
+
     <view class="u-page">
-      <u-list
-          @scrolltolower="scrolltolower"
+      <u-list v-if="list.length>0"
+              @scrolltolower="scrolltolower"
       >
         <u-list-item
             v-for="(item, index) in list"
             :key="index"
         >
           <u-cell>
-            <view slot="title" style="width: 70%;display: inline-block">
+            <view slot="title">
               <view>
-                <view style="width: 180rpx;">
-                  <u-tag :text="item.orderStatus" v-if="item.orderStatus === '未支付'"></u-tag>
-                  <u-tag :text="item.orderStatus" v-if="item.orderStatus === '支付成功'"
-                         type="success"></u-tag>
-                  <u-tag :text="item.orderStatus" v-if="item.orderStatus === '超时已关闭'"
-                         type="warning"></u-tag>
-                  <u-tag :text="item.orderStatus" v-if="item.orderStatus === '用户已取消'"
-                         type="info"></u-tag>
-                  <u-tag :text="item.orderStatus" v-if="item.orderStatus === '退款中'"
-                         type="danger"></u-tag>
-                  <u-tag :text="item.orderStatus" v-if="item.orderStatus === '已退款'"
-                         type="info"></u-tag>
-                </view>
                 <view>
-                  《 {{ item.title.split('-')[0] }} 》
+                  <view style="display: inline-block">
+                    <u-tag :text="reloadTitle(item.title.split('-')[0])" plain plainFill></u-tag>
+                    <!--                                        《{{item.title.split('-')[0]}}》-->
+                  </view>
+
+                  <view class="payView">
+                    <view style="width: 180rpx;">
+                      <u-tag :text="item.orderStatus"
+                             v-if="item.orderStatus === '未支付'"></u-tag>
+                      <u-tag :text="item.orderStatus" v-if="item.orderStatus === '支付成功'"
+                             type="success"></u-tag>
+                      <u-tag :text="item.orderStatus" v-if="item.orderStatus === '超时已关闭'"
+                             type="warning"></u-tag>
+                      <u-tag :text="item.orderStatus" v-if="item.orderStatus === '用户已取消'"
+                             type="info"></u-tag>
+                      <u-tag :text="item.orderStatus" v-if="item.orderStatus === '退款中'"
+                             type="danger"></u-tag>
+                      <u-tag :text="item.orderStatus" v-if="item.orderStatus === '已退款'"
+                             type="info"></u-tag>
+                    </view>
+                  </view>
+
                 </view>
                 <view>
                   订单支付人: {{ item.title.split('-')[1] ? item.title.split('-')[1] : '未知' }}
@@ -46,10 +66,14 @@
 
 
             <view slot="label">
-              <view style="text-align: left">
-                订单金额：{{ item.totalFee / 100 }} 元
+              <view style="float:left;">
+                <view style="text-align: left;">
+                  订单金额：{{ item.totalFee / 100 }} 元
+                </view>
+                <view style="text-align: left;">
+                  下单时间: {{ item.createTime }}
+                </view>
               </view>
-
               <view style="float:right;">
 
                 <view class="btn" v-if="item.orderStatus === '支付成功'">
@@ -75,6 +99,13 @@
 
         </u-list-item>
       </u-list>
+
+
+      <view v-else style="margin-top: 15px;">
+        <u-empty icon="https://cdn.uviewui.com/uview/empty/data.png"></u-empty>
+      </view>
+
+
     </view>
     <u-modal
         :loading="loading"
@@ -164,7 +195,9 @@ export default {
           trigger: ['blur', 'change']
         },
       },
-      payBtnDisabled: false
+      payBtnDisabled: false,
+      queryList: ['全部', '未支付', '退款中', '已退款', '支付成功', '超时关闭', '用户取消'],
+      currentSubsection: 0,
     }
   },
   onShow() {
@@ -175,15 +208,22 @@ export default {
     this.$refs.uForm.setRules(this.rules)
   },
   methods: {
+    reloadTitle(item) {
+      return "《" + item + "》"
+    },
+    // 类型切换
+    change1(index) {
+      this.currentSubsection = index
+      // 发送请求
+      this.loadmore()
+    },
     //退款对话框
     refund(item) {
-      console.log(item);
       // orderNo, total, refundNo
-      // if ((item.totalFee / 100) < 0.5) {
-      //     toast("金额太少就不退了,感谢老板的支持!")
-      //     return;
-      // }
-
+      if ((item.totalFee / 100) < 0.5) {
+        toast("金额太少就不退了,感谢老板的支持!")
+        return;
+      }
       this.refundDialogVisible = true
       this.refundForm.orderNo = item.orderNo
       this.refundForm.refundNo = item.refundNo
@@ -295,8 +335,9 @@ export default {
       console.log(data);
     },
     loadmore() {
+      const data = this.queryList[this.currentSubsection] || null
       this.loading = true
-      orderInfoApi.list().then((response) => {
+      orderInfoApi.list(data).then((response) => {
         this.list = response.data.list.slice(0, 50);
         this.loading = false
       });
@@ -312,8 +353,16 @@ export default {
 }
 
 .btn {
-  margin-left: 10px;
+  margin-left: 6px;
   display: inline-block;
+}
+
+.payView {
+  /*float:right*/
+  display: inline-block;
+  text-align: right;
+  vertical-align: baseline;
+  float: right;
 }
 
 </style>
