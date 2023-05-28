@@ -56,8 +56,7 @@ java -jar CertificateDownloader-1.2.0-jar-with-dependencies.jar
 - `-s <merchantSerialNo>`，商户API证书的序列号
 ```
 
-![执行示例](doc/img/downloadCer.png)
-
+![](https://raw.githubusercontent.com/yangbuyiya/yangbuyi-blog-images/master/picgo/2023202305281117118.png)
 
 ### 后端配置
 <p> 1.1 前往 wxpay.properties 配置好对应的微信配置</p>
@@ -79,17 +78,16 @@ java -jar CertificateDownloader-1.2.0-jar-with-dependencies.jar
 # 微信群聊
 微信搜索 `BN_Tang` 加好友备注微信支付邀请入群解答
 
-![img.png](doc/img/qunliao.png)
+<img src="https://raw.githubusercontent.com/yangbuyiya/yangbuyi-blog-images/master/picgo/2023202305281115385.png" alt="img.png" style="zoom: 25%;" />
 
 # PC端演示
 [前往](https://lzys522.cn/wx/)
 ![输入图片说明](doc/img/image2.png)
 
 # uniapp小程序演示
-![小程序二维码](doc/img/img.png)
+<img src="https://raw.githubusercontent.com/yangbuyiya/yangbuyi-blog-images/master/picgo/2023202305281115722.png" alt="小程序二维码" style="zoom: 50%;" />
 
-![img.png](doc/img/imgewm.png)
-![img_1.png](doc/img/img_1.png)
-![img_2.png](doc/img/img_2.png)
-
+<img src="https://raw.githubusercontent.com/yangbuyiya/yangbuyi-blog-images/master/picgo/2023202305281115640.png" alt="img.png" style="zoom: 25%;" />
+<img src="https://raw.githubusercontent.com/yangbuyiya/yangbuyi-blog-images/master/picgo/2023202305281116671.png" alt="img_1.png" style="zoom: 25%;" />
+<img src="https://raw.githubusercontent.com/yangbuyiya/yangbuyi-blog-images/master/picgo/2023202305281116593.png" alt="img_2.png" style="zoom:25%;" />
 
