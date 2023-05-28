@@ -114,7 +114,7 @@ public class wxJSApiPayController extends Controller {
                 return R.ok().data("wx", map);
             }
 
-            // 订单超时时间
+            // 订单超时时间  五分钟过期
             String timeExpire = DateTimeZoneUtil.dateToTimeZone(System.currentTimeMillis() + 1000 * 60 * 3);
             UnifiedOrderModel unifiedOrderModel = new UnifiedOrderModel().setAppid(wxPayConfig.getAppid()).setMchid(wxPayConfig.getMchId()).setDescription(orderInfo.getTitle() + "-" + nickName).setOut_trade_no(orderInfo.getOrderNo()).setTime_expire(timeExpire) // 订单过期时间
                     .setAttach("杨不易呀 https://yby6.com").setNotify_url(wxPayConfig.getNotifyDomain().concat(WxJSNotifyType.NATIVE_NOTIFY.getType())).setAmount(new Amount().setTotal(orderInfo.getTotalFee())).setPayer(new Payer().setOpenid(openId));

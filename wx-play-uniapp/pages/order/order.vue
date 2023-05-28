@@ -280,6 +280,24 @@ export default {
     toPay(item) {
       console.log(item);
       this.payBtnDisabled = true
+
+      const dateTimeString = item.createTime;
+      // 将字符串形式的日期时间转换为 Date 对象
+      const date = new Date(dateTimeString);
+      // 获取当前时间
+      const now = new Date();
+      if((now - date) > (5 * 60 * 1000)){
+        console.log('Timestamp has expired');
+        toast("订单超时支付,已关闭订单请重新下单!")
+        // 发起关闭订单
+        orderInfoApi.orderTimeout(item.orderNo)
+        setTimeout(() => {
+          this.loadmore()
+        }, 1000)
+        this.payBtnDisabled = false;
+        return
+      }
+
       // 获取微信支付凭证创建支付订单
       const storageSync = uni.getStorageSync('token'); // openId
       const nickName = uni.getStorageSync('nickName');
@@ -287,24 +305,7 @@ export default {
           item.productId, storageSync + "|" + nickName
       ).then(res => {
         console.log(res)
-
         const wx = res.data.wx
-
-        const now = new Date();
-        const delta = now.getTime() - parseInt(wx.timeStamp);
-
-        console.log(delta)
-
-        // 大于等于五分钟则直接关闭订单
-        if (delta >= (5 * 60 * 1000)) {
-          console.log('Timestamp has expired');
-          toast("订单超时支付,已关闭订单请重新下单!")
-          // 发起关闭订单
-          orderInfoApi.orderTimeout(item.orderNo)
-          this.payBtnDisabled = false;
-          return
-        }
-
         toast("创建订单成功正在拉起支付请稍等....")
         // 调用微信支付弹窗
         uni.requestPayment({
