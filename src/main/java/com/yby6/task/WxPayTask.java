@@ -43,13 +43,13 @@ public class WxPayTask {
     }
 
     /**
-     * 从第0秒开始每隔30秒执行1次，查询创建超过10分钟，并且未支付的订单
+     * 查询创建超过10分钟，并且未支付的订单
      */
-    @Scheduled(cron = "0/60 * * * * ?")
+    @Scheduled(cron = "0 0/5 * * * ? ")
     public void orderConfirm() throws Exception {
         log.info("orderConfirm 被执行......");
 
-        List<OrderInfo> orderInfoList = orderInfoService.getNoPayOrderByDuration(30);
+        List<OrderInfo> orderInfoList = orderInfoService.getNoPayOrderByDuration(10);
 
         for (OrderInfo orderInfo : orderInfoList) {
             String orderNo = orderInfo.getOrderNo();
@@ -62,14 +62,14 @@ public class WxPayTask {
 
 
     /**
-     * 从第0秒开始每隔30秒执行1次，查询创建超过10分钟，并且未成功的退款单
+     * 查询创建超过10分钟，并且未成功的退款单
      */
-    @Scheduled(cron = "0/60 * * * * ?")
+    @Scheduled(cron = "0 0/5 * * * ? ")
     public void refundConfirm() throws Exception {
         log.info("refundConfirm 被执行......");
 
         // 找出申请退款超过5分钟并且未成功的退款单
-        List<RefundInfo> refundInfoList = refundInfoService.getNoRefundOrderByDuration(30);
+        List<RefundInfo> refundInfoList = refundInfoService.getNoRefundOrderByDuration(10);
 
         for (RefundInfo refundInfo : refundInfoList) {
             String refundNo = refundInfo.getRefundNo();

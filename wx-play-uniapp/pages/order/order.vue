@@ -37,7 +37,6 @@
                 <view>
                   <view style="display: inline-block">
                     <u-tag :text="reloadTitle(item.title.split('-')[0])" plain plainFill></u-tag>
-                    <!--                                        《{{item.title.split('-')[0]}}》-->
                   </view>
 
                   <view class="payView">
@@ -289,9 +288,24 @@ export default {
       ).then(res => {
         console.log(res)
 
-        toast("创建订单成功正在拉起支付请稍等....")
-
         const wx = res.data.wx
+
+        const now = new Date();
+        const delta = now.getTime() - parseInt(wx.timeStamp);
+
+        console.log(delta)
+
+        // 大于等于五分钟则直接关闭订单
+        if (delta >= (5 * 60 * 1000)) {
+          console.log('Timestamp has expired');
+          toast("订单超时支付,已关闭订单请重新下单!")
+          // 发起关闭订单
+          orderInfoApi.orderTimeout(item.orderNo)
+          this.payBtnDisabled = false;
+          return
+        }
+
+        toast("创建订单成功正在拉起支付请稍等....")
         // 调用微信支付弹窗
         uni.requestPayment({
           provide: 'wxpay',
@@ -302,23 +316,8 @@ export default {
           paySign: wx.paySign, // 支付签名
           success: (res) => {
             console.log(res);
-
             this.payBtnDisabled = false
-            // 支付完毕 短轮询查询后台订单是否成功
-            // this.$post(this.api.searchPaymentResult + outTradeNo, {}, (resp) => {
-            //     console.log(resp.data);
-            //     if (resp.data.result) {
-            //         this.$toast.msgSuccess("支付成功")
-            //     } else {
-            //         this.$toast.msgError("付款异常，请联系客服!")
-            //     }
-            //
-            //     // 等待跳转
-            //     setTimeout(() => {
-            //         this.$toast.switchTab('/pages/registration_list/registration_list')
-            //     }, 2000)
-            //
-            // })
+            // TODO 支付完毕 短轮询查询后台订单是否成功
           },
           fail: (res) => {
             console.log(res);

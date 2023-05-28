@@ -1,6 +1,6 @@
 import request from '@/utils/request'
 
-export default{
+export default {
 	//查询订单列表
 	list(payType) {
 		return request({
@@ -15,6 +15,13 @@ export default{
 	queryOrderStatus(orderNo) {
 		return request({
 			url: '/api/order-info/query-order-status/' + orderNo,
+			method: 'get'
+		})
+	},
+
+	orderTimeout(orderNo) {
+		return request({
+			url: '/api/order-info/order-timeout/' + orderNo,
 			method: 'get'
 		})
 	}

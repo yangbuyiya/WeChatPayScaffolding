@@ -5,6 +5,7 @@ import com.yby6.config.R;
 import com.yby6.entity.OrderInfo;
 import com.yby6.enums.OrderStatus;
 import com.yby6.service.OrderInfoService;
+import com.yby6.service.WxPayService;
 import com.yby6.util.StringUtils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -25,6 +26,9 @@ public class OrderInfoController {
 
     @Resource
     private OrderInfoService orderInfoService;
+
+    @Resource
+    private WxPayService wxPayService;
 
     @ApiOperation("订单列表")
     @GetMapping("/list")
@@ -61,5 +65,14 @@ public class OrderInfoController {
         return R.ok().setCode(101).setMessage("支付中......");
     }
 
-
+    @ApiOperation("主动发起订单超时")
+    @GetMapping("/order-timeout/{orderNo}")
+    public R orderTimeout(@PathVariable String orderNo) {
+        try {
+            wxPayService.checkOrderStatus(orderNo);
+            return R.ok();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
