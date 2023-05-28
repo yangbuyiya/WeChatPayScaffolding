@@ -1,29 +1,34 @@
 # 从零玩转微信支付
 
 ### 介绍
-使用微信官方文档对接微信支付 
 
-内置vue3+vite前端使用微信官方原生接口对接native v3 v2 
+使用微信官方文档对接微信支付
+
+内置vue3+vite前端使用微信官方原生接口对接native v3 v2
 
 内置小程序端 使用快速对接神器IJPay对接jsapi v3
 
 同步更新： 码云[GITEE](https://gitee.com/yangbuyi/wxDemo) 外国 [GITHUB](https://github.com/yangbuyiya/wxDemo)
 
-###  软件架构
+### 软件架构
+
 <p> 前端 vue3 + vite + element plus
 <p> 小程序 uniapp
 <p> 后端 boot 2.x + mybatis plus + mysql
 
-###  安装教程
+### 安装教程
+
 1. 将商户证书全部复制到**resources**目录下
 2. 下载微信平台证书（不是商户证书）
 
 #### 2.1 Certificate Downloader
+
 Certificate Downloader 是 Java 微信支付 APIv3 平台证书的命令行下载工具。
-#### 前置条件
-+ JRE 1.8+
+
 #### 快速开始
-该工具已经通过 Maven 打包成 CertificateDownloader.jar，可在 [release ](https://github.com/EliasZzz/CertificateDownloader/releases) 中下载。
+
+该工具已经通过 Maven 打包成
+CertificateDownloader.jar，可在 [release ](https://github.com/EliasZzz/CertificateDownloader/releases) 中下载。
 下载 jar 包后，如果你没有证书，第一次下载证书的命令如下
 
 ```bash
@@ -59,34 +64,41 @@ java -jar CertificateDownloader-1.2.0-jar-with-dependencies.jar
 ![](https://raw.githubusercontent.com/yangbuyiya/yangbuyi-blog-images/master/picgo/2023202305281117118.png)
 
 ### 后端配置
+
 <p> 1.1 前往 wxpay.properties 配置好对应的微信配置</p>
 <p> 1.2 前往 application.yml 配置好数据库链接信息
 
 ### pc端配置
+
 <p> 1. vite.config.js 配置你的后端请求url
 
 ### uniapp小程序配置
+
 <p> 1.1 使用 HBuilder软件导入wx-play-uniapp
 <p> 1.2 修改后端对应到appId 
 <p> 1.3 修改wx-play-uniapp/utils/request.js 请求路径 baseUrl
 
 ### 本地支付回调调试
+
 1. 使用内网穿透工具代理后端端口
 2. 前段修改对应的baseUrl
 
-
 # 微信群聊
+
 微信搜索 `BN_Tang` 加好友备注微信支付邀请入群解答
 
-<img src="https://raw.githubusercontent.com/yangbuyiya/yangbuyi-blog-images/master/picgo/2023202305281115385.png" alt="img.png" style="width:300px" />
+<img src="https://raw.githubusercontent.com/yangbuyiya/yangbuyi-blog-images/master/picgo/2023202305281115385.png" width="300px" height="450px"  />
 
 # PC端演示
+
 [前往](https://lzys522.cn/wx/)
-![输入图片说明](doc/img/image2.png)
+
+![输入图片说明](https://raw.githubusercontent.com/yangbuyiya/yangbuyi-blog-images/master/picgo/2023202305281123380.png)
 
 # uniapp小程序演示
-<img src="https://raw.githubusercontent.com/yangbuyiya/yangbuyi-blog-images/master/picgo/2023202305281115722.png" alt="小程序二维码" style="width:300px" />
-<img src="https://raw.githubusercontent.com/yangbuyiya/yangbuyi-blog-images/master/picgo/2023202305281115640.png" alt="img.png" style="width:300px" />
-<img src="https://raw.githubusercontent.com/yangbuyiya/yangbuyi-blog-images/master/picgo/2023202305281116671.png" alt="img_1.png" style="width:300px" />
-<img src="https://raw.githubusercontent.com/yangbuyiya/yangbuyi-blog-images/master/picgo/2023202305281116593.png" alt="img_2.png" style="width:300px" />
+
+<img src="https://raw.githubusercontent.com/yangbuyiya/yangbuyi-blog-images/master/picgo/2023202305281115722.png" width="300px" height="450px"   />
+<img src="https://raw.githubusercontent.com/yangbuyiya/yangbuyi-blog-images/master/picgo/2023202305281115640.png" width="300px" height="450px"  />
+<img src="https://raw.githubusercontent.com/yangbuyiya/yangbuyi-blog-images/master/picgo/2023202305281116671.png" width="300px" height="450px"   />
+<img src="https://raw.githubusercontent.com/yangbuyiya/yangbuyi-blog-images/master/picgo/2023202305281116593.png" width="300px" height="450px"   />
 
