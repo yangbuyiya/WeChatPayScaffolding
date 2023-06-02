@@ -61,7 +61,7 @@ java -jar CertificateDownloader-1.2.0-jar-with-dependencies.jar
 - `-s <merchantSerialNo>`，商户API证书的序列号
 ```
 
-![](https://raw.githubusercontent.com/yangbuyiya/yangbuyi-blog-images/master/picgo/2023202305281117118.png)
+![](https://foruda.gitee.com/images/1685674014076230916/f6659409_5151444.png)
 
 ### 后端配置
 
@@ -87,18 +87,18 @@ java -jar CertificateDownloader-1.2.0-jar-with-dependencies.jar
 
 微信搜索 `BN_Tang` 加好友备注微信支付邀请入群解答
 
-<img src="https://raw.githubusercontent.com/yangbuyiya/yangbuyi-blog-images/master/picgo/2023202305281115385.png" width="300px" height="450px"  />
+<img src="https://foruda.gitee.com/images/1685673733774119250/fe04bfeb_5151444.png" width="300px" height="450px"  />
 
 # PC端演示
 
 [前往](https://lzys522.cn/wx/)
 
-![输入图片说明](https://raw.githubusercontent.com/yangbuyiya/yangbuyi-blog-images/master/picgo/2023202305281123380.png)
+![输入图片说明](https://foruda.gitee.com/images/1685673897693356870/89f3440f_5151444.png)
 
 # uniapp小程序演示
 
-<img src="https://raw.githubusercontent.com/yangbuyiya/yangbuyi-blog-images/master/picgo/2023202305281115722.png" width="300px" height="450px"   />
-<img src="https://raw.githubusercontent.com/yangbuyiya/yangbuyi-blog-images/master/picgo/2023202305281115640.png" width="300px" height="450px"  />
-<img src="https://raw.githubusercontent.com/yangbuyiya/yangbuyi-blog-images/master/picgo/2023202305281116671.png" width="300px" height="450px"   />
-<img src="https://raw.githubusercontent.com/yangbuyiya/yangbuyi-blog-images/master/picgo/2023202305281116593.png" width="300px" height="450px"   />
+<img src="https://foruda.gitee.com/images/1685673930068447278/c20a6a06_5151444.png" width="300px" height="450px"   />
+<img src="https://foruda.gitee.com/images/1685673948311564004/1354febc_5151444.png" width="300px" height="450px"  />
+<img src="https://foruda.gitee.com/images/1685673968161079699/b1465aba_5151444.png" width="300px" height="450px"   />
+<img src="https://foruda.gitee.com/images/1685673988191687152/69f3b19b_5151444.png" width="300px" height="450px"   />
 
