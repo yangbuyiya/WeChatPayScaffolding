@@ -10,8 +10,6 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
 @EnableScheduling
-@ServletComponentScan
-@ComponentScan("com.yby6.*")
 public class WxPlayDemoApplication {
 
     public static void main(String[] args) {
