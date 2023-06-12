@@ -1,5 +1,13 @@
 # 从零玩转微信支付
 
+### 配套文章
+
+-  [第一章从零玩转系列之微信支付开篇](https://www.yby6.com/archives/wechatpay02)
+-  [第二章从零玩转系列之微信支付安全](https://www.yby6.com/archives/wechatpay01)
+-  [第三章从零玩转系列之微信支付实战基础框架搭建](https://www.yby6.com/archives/wechatpay03)
+-  [第四章从零玩转系列之微信支付实战PC端接口搭建](https://www.yby6.com/archives/wechat04)
+-  [敬请期待................]
+
 ### 介绍
 
 使用微信官方文档对接微信支付
