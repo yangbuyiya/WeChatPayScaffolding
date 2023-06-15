@@ -86,12 +86,6 @@
 
                     <u-button type="warning"
                               text="确认支付V3" @click="toPay()" :disabled="payBtnDisabled"></u-button>
-                    <!--                    <view static="width: 120px;padding: 10px;">-->
-                    <!--                        <u-button type="warning"-->
-                    <!--                                  class="c-btn-2"-->
-                    <!--                                  text="确认支付V2" @click="toPayV2()" :disabled="payBtnDisabled"></u-button>-->
-                    <!--                    </view>-->
-
                 </view>
             </section>
         </view>
@@ -318,24 +312,8 @@ export default {
                     signType: wx.signType, // 签名算法
                     paySign: wx.paySign, // 支付签名
                     success: (res) => {
-                        console.log(res);
-
                         this.payBtnDisabled = false
-                        // 支付完毕 短轮询查询后台订单是否成功
-                        // this.$post(this.api.searchPaymentResult + outTradeNo, {}, (resp) => {
-                        //     console.log(resp.data);
-                        //     if (resp.data.result) {
-                        //         this.$toast.msgSuccess("支付成功")
-                        //     } else {
-                        //         this.$toast.msgError("付款异常，请联系客服!")
-                        //     }
-                        //
-                        //     // 等待跳转
-                        //     setTimeout(() => {
-                        //         this.$toast.switchTab('/pages/registration_list/registration_list')
-                        //     }, 2000)
-                        //
-                        // })
+                        // TODO 支付完毕 短轮询查询后台订单是否成功
                     },
                     fail: (res) => {
                         console.log(res);
