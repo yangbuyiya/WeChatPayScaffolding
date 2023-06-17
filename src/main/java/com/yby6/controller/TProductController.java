@@ -3,9 +3,10 @@
 package com.yby6.controller;
 
 import com.yby6.config.R;
-import com.yby6.domain.TProduct;
 import com.yby6.service.TProductService;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 
@@ -14,7 +15,7 @@ import javax.annotation.Resource;
  *
  * @author yangs
  */
-@CrossOrigin
+
 @RestController
 @RequestMapping("/api/product")
 public class TProductController {

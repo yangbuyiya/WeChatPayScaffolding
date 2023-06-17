@@ -19,7 +19,7 @@ public enum WxJSApiType {
      * jsapi 下单
      * POST
      */
-    JSAPI_PAy("/v3/pay/transactions/jsapi");
+    JSAPI_PAY("/v3/pay/transactions/jsapi");
 
 
     /**

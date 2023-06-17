@@ -26,7 +26,7 @@ import java.util.Map;
  * @author Yang Shuai
  * Create By 2023/05/21
  */
-@CrossOrigin
+
 @RestController
 @RequestMapping("/api/wx-pay")
 @Slf4j
@@ -59,7 +59,7 @@ public class WxPayController {
             log.info("支付通知的id ===> {}", requestId);
 
             //签名的验证
-            WechatPay2ValidatorForRequest wechatPay2ValidatorForRequest = new WechatPay2ValidatorForRequest(verifier, requestId, body);
+            WechatPay2ValidatorForRequest wechatPay2ValidatorForRequest = new WechatPay2ValidatorForRequest(verifier, body);
             if (!wechatPay2ValidatorForRequest.validate(request)) {
                 log.error("通知验签失败");
                 //失败应答
@@ -162,11 +162,9 @@ public class WxPayController {
             String body = HttpUtils.readData(request);
             Map<String, Object> bodyMap = gson.fromJson(body, HashMap.class);
             log.info("退款参数：{}", bodyMap);
-            String requestId = (String) bodyMap.get("id");
-            log.info("支付通知的id ===> {}", requestId);
 
             //签名的验证
-            WechatPay2ValidatorForRequest wechatPay2ValidatorForRequest = new WechatPay2ValidatorForRequest(verifier, requestId, body);
+            WechatPay2ValidatorForRequest wechatPay2ValidatorForRequest = new WechatPay2ValidatorForRequest(verifier, body);
             if (!wechatPay2ValidatorForRequest.validate(request)) {
 
                 log.error("通知验签失败");

@@ -2,6 +2,7 @@
 
 package com.yby6.service.impl;
 
+import cn.hutool.core.util.StrUtil;
 import com.github.wxpay.sdk.WXPayUtil;
 import com.google.gson.Gson;
 import com.wechat.pay.contrib.apache.httpclient.util.AesUtil;
@@ -95,7 +96,7 @@ public class WxPayServiceImpl implements WxPayService {
         // 生成订单
         OrderInfo orderInfo = orderInfoService.createOrderByProductId(productId, null);
         String codeUrl = orderInfo.getCodeUrl();
-        if (!StringUtils.isEmpty(codeUrl)) {
+        if (StrUtil.isNotEmpty(codeUrl)) {
             log.info("订单已存在，二维码已保存");
             // 返回二维码
             Map<String, Object> map = new HashMap<>();

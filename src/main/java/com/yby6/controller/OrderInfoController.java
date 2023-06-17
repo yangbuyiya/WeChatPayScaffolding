@@ -17,8 +17,6 @@ import javax.annotation.Resource;
  * @author yang shuai
  * @date 2022/11/13
  */
-
-@CrossOrigin //开放前端的跨域访问
 @Api(tags = "商品订单管理")
 @RestController
 @RequestMapping("/api/order-info")

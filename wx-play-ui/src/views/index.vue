@@ -13,6 +13,12 @@
              style="color: red;  margin-bottom: 10px;font-size: 14px;height: auto !important;">
           本案例使用Native模式拉取二维码用户进行微信扫码支付指定商品操作。
         </div>
+
+        <div class="PaymentChannel_title"
+             style="color: red;  margin-bottom: 10px;font-size: 14px;height: auto !important;">
+          开源代码仓库地址：<a href="https://gitee.com/yangbuyi/wxDemo" target="_blank">https://gitee.com/yangbuyi/wxDemo</a>
+        </div>
+
         <div class="PaymentChannel_title"
              style="color: red;  margin-bottom: 10px;font-size: 14px;height: auto !important;">
           个人博客网站： <a href="https://yby6.com" target="_blank">https://yby6.com</a>
@@ -25,7 +31,6 @@
              style="color: red;  margin-bottom: 10px;font-size: 14px;height: auto !important;">
           全网很火爱心案例： <a href="https://lzys522.cn/love/" target="_blank">https://lzys522.cn/love</a>
         </div>
-
 
         <ul>
           <li v-for="product in productList" :key="product.id">

@@ -28,7 +28,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * @author Yang Shuai
  * Create By 2023/05/21
  */
-@CrossOrigin //跨域
+
 @RestController
 @RequestMapping("/api/wx-pay-v2")
 @Api(tags = "网站微信支付APIv2")
