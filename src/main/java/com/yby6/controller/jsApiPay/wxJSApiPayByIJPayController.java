@@ -37,7 +37,7 @@ import java.util.Map;
 /**
  * IJPay JSAPI 支付 v3
  * <p>IJPay 微信支付 v3 接口示例</p>
- *
+ * <a href="https://gitee.com/javen205/IJPay?_from=gitee_search">开源仓库</a>
  * @author yang shuai
  * @date 2022/11/19
  */
