@@ -10,8 +10,8 @@
  * @FilePath     : /u-view2.0/uview-ui/libs/config/props/listItem.js
  */
 export default {
-    // listItem 组件
-    listItem: {
-        anchor: ''
-    }
-}
+  // listItem 组件
+  listItem: {
+    anchor: "",
+  },
+};

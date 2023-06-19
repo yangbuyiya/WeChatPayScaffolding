@@ -10,20 +10,20 @@
  * @FilePath     : /u-view2.0/uview-ui/libs/config/props/checkbox.js
  */
 export default {
-    // checkbox组件
-    checkbox: {
-        name: '',
-        shape: '',
-        size: '',
-        checkbox: false,
-        disabled: '',
-        activeColor: '',
-        inactiveColor: '',
-        iconSize: '',
-        iconColor: '',
-        label: '',
-        labelSize: '',
-        labelColor: '',
-        labelDisabled: ''
-    }
-}
+  // checkbox组件
+  checkbox: {
+    name: "",
+    shape: "",
+    size: "",
+    checkbox: false,
+    disabled: "",
+    activeColor: "",
+    inactiveColor: "",
+    iconSize: "",
+    iconColor: "",
+    label: "",
+    labelSize: "",
+    labelColor: "",
+    labelDisabled: "",
+  },
+};

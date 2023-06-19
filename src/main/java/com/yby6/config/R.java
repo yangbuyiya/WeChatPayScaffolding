@@ -2,12 +2,10 @@
 
 package com.yby6.config;
 
-import com.yby6.domain.TProduct;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 

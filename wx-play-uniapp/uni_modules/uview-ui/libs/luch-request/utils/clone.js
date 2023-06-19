@@ -1,8 +1,8 @@
 // yangbuyi Copyright (c) https://yby6.com 2023.
 
 /* eslint-disable */
-var clone = (function() {
-  'use strict';
+var clone = (function () {
+  "use strict";
 
   function _instanceof(obj, type) {
     return type != null && obj instanceof type;
@@ -11,24 +11,24 @@ var clone = (function() {
   var nativeMap;
   try {
     nativeMap = Map;
-  } catch(_) {
+  } catch (_) {
     // maybe a reference error because no `Map`. Give it a dummy value that no
     // value will ever be an instanceof.
-    nativeMap = function() {};
+    nativeMap = function () {};
   }
 
   var nativeSet;
   try {
     nativeSet = Set;
-  } catch(_) {
-    nativeSet = function() {};
+  } catch (_) {
+    nativeSet = function () {};
   }
 
   var nativePromise;
   try {
     nativePromise = Promise;
-  } catch(_) {
-    nativePromise = function() {};
+  } catch (_) {
+    nativePromise = function () {};
   }
 
   /**
@@ -53,7 +53,7 @@ var clone = (function() {
    *    chain will be ignored. (optional - false by default)
    */
   function clone(parent, circular, depth, prototype, includeNonEnumerable) {
-    if (typeof circular === 'object') {
+    if (typeof circular === "object") {
       depth = circular.depth;
       prototype = circular.prototype;
       includeNonEnumerable = circular.includeNonEnumerable;
@@ -64,26 +64,22 @@ var clone = (function() {
     var allParents = [];
     var allChildren = [];
 
-    var useBuffer = typeof Buffer != 'undefined';
+    var useBuffer = typeof Buffer != "undefined";
 
-    if (typeof circular == 'undefined')
-      circular = true;
+    if (typeof circular == "undefined") circular = true;
 
-    if (typeof depth == 'undefined')
-      depth = Infinity;
+    if (typeof depth == "undefined") depth = Infinity;
 
     // recurse this function so we don't reset allParents and allChildren
     function _clone(parent, depth) {
       // cloning null always returns null
-      if (parent === null)
-        return null;
+      if (parent === null) return null;
 
-      if (depth === 0)
-        return parent;
+      if (depth === 0) return parent;
 
       var child;
       var proto;
-      if (typeof parent != 'object') {
+      if (typeof parent != "object") {
         return parent;
       }
 
@@ -93,11 +89,14 @@ var clone = (function() {
         child = new nativeSet();
       } else if (_instanceof(parent, nativePromise)) {
         child = new nativePromise(function (resolve, reject) {
-          parent.then(function(value) {
-            resolve(_clone(value, depth - 1));
-          }, function(err) {
-            reject(_clone(err, depth - 1));
-          });
+          parent.then(
+            function (value) {
+              resolve(_clone(value, depth - 1));
+            },
+            function (err) {
+              reject(_clone(err, depth - 1));
+            }
+          );
         });
       } else if (clone.__isArray(parent)) {
         child = [];
@@ -119,11 +118,10 @@ var clone = (function() {
       } else if (_instanceof(parent, Error)) {
         child = Object.create(parent);
       } else {
-        if (typeof prototype == 'undefined') {
+        if (typeof prototype == "undefined") {
           proto = Object.getPrototypeOf(parent);
           child = Object.create(proto);
-        }
-        else {
+        } else {
           child = Object.create(prototype);
           proto = prototype;
         }
@@ -140,14 +138,14 @@ var clone = (function() {
       }
 
       if (_instanceof(parent, nativeMap)) {
-        parent.forEach(function(value, key) {
+        parent.forEach(function (value, key) {
           var keyChild = _clone(key, depth - 1);
           var valueChild = _clone(value, depth - 1);
           child.set(keyChild, valueChild);
         });
       }
       if (_instanceof(parent, nativeSet)) {
-        parent.forEach(function(value) {
+        parent.forEach(function (value) {
           var entryChild = _clone(value, depth - 1);
           child.add(entryChild);
         });
@@ -161,22 +159,21 @@ var clone = (function() {
 
         try {
           var objProperty = Object.getOwnPropertyDescriptor(parent, i);
-          if (objProperty.set === 'undefined') {
+          if (objProperty.set === "undefined") {
             // no setter defined. Skip cloning this property
             continue;
           }
           child[i] = _clone(parent[i], depth - 1);
-        } catch(e){
+        } catch (e) {
           if (e instanceof TypeError) {
             // when in strict mode, TypeError will be thrown if child[i] property only has a getter
             // we can't do anything about this, other than inform the user that this property cannot be set.
-            continue
+            continue;
           } else if (e instanceof ReferenceError) {
             //this may happen in non strict mode
-            continue
+            continue;
           }
         }
-
       }
 
       if (Object.getOwnPropertySymbols) {
@@ -198,7 +195,10 @@ var clone = (function() {
         var allPropertyNames = Object.getOwnPropertyNames(parent);
         for (var i = 0; i < allPropertyNames.length; i++) {
           var propertyName = allPropertyNames[i];
-          var descriptor = Object.getOwnPropertyDescriptor(parent, propertyName);
+          var descriptor = Object.getOwnPropertyDescriptor(
+            parent,
+            propertyName
+          );
           if (descriptor && descriptor.enumerable) {
             continue;
           }
@@ -221,15 +221,14 @@ var clone = (function() {
    * works.
    */
   clone.clonePrototype = function clonePrototype(parent) {
-    if (parent === null)
-      return null;
+    if (parent === null) return null;
 
     var c = function () {};
     c.prototype = parent;
     return new c();
   };
 
-// private utility functions
+  // private utility functions
 
   function __objToStr(o) {
     return Object.prototype.toString.call(o);
@@ -237,25 +236,25 @@ var clone = (function() {
   clone.__objToStr = __objToStr;
 
   function __isDate(o) {
-    return typeof o === 'object' && __objToStr(o) === '[object Date]';
+    return typeof o === "object" && __objToStr(o) === "[object Date]";
   }
   clone.__isDate = __isDate;
 
   function __isArray(o) {
-    return typeof o === 'object' && __objToStr(o) === '[object Array]';
+    return typeof o === "object" && __objToStr(o) === "[object Array]";
   }
   clone.__isArray = __isArray;
 
   function __isRegExp(o) {
-    return typeof o === 'object' && __objToStr(o) === '[object RegExp]';
+    return typeof o === "object" && __objToStr(o) === "[object RegExp]";
   }
   clone.__isRegExp = __isRegExp;
 
   function __getRegExpFlags(re) {
-    var flags = '';
-    if (re.global) flags += 'g';
-    if (re.ignoreCase) flags += 'i';
-    if (re.multiline) flags += 'm';
+    var flags = "";
+    if (re.global) flags += "g";
+    if (re.ignoreCase) flags += "i";
+    if (re.multiline) flags += "m";
     return flags;
   }
   clone.__getRegExpFlags = __getRegExpFlags;
@@ -263,4 +262,4 @@ var clone = (function() {
   return clone;
 })();
 
-export default clone
+export default clone;

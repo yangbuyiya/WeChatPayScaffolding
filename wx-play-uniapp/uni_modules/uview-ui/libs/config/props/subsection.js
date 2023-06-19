@@ -10,16 +10,16 @@
  * @FilePath     : /u-view2.0/uview-ui/libs/config/props/subsection.js
  */
 export default {
-    // subsection组件
-    subsection: {
-        list: [],
-        current: 0,
-        activeColor: '#3c9cff',
-        inactiveColor: '#303133',
-        mode: 'button',
-        fontSize: 12,
-        bold: true,
-        bgColor: '#eeeeef',
-		keyName: 'name'
-    }
-}
+  // subsection组件
+  subsection: {
+    list: [],
+    current: 0,
+    activeColor: "#3c9cff",
+    inactiveColor: "#303133",
+    mode: "button",
+    fontSize: 12,
+    bold: true,
+    bgColor: "#eeeeef",
+    keyName: "name",
+  },
+};

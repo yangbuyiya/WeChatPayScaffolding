@@ -10,12 +10,12 @@
  * @FilePath     : /u-view2.0/uview-ui/libs/config/props/indexList.js
  */
 export default {
-    // indexList 组件
-    indexList: {
-        inactiveColor: '#606266',
-        activeColor: '#5677fc',
-        indexList: () => [],
-        sticky: true,
-        customNavHeight: 0
-    }
-}
+  // indexList 组件
+  indexList: {
+    inactiveColor: "#606266",
+    activeColor: "#5677fc",
+    indexList: () => [],
+    sticky: true,
+    customNavHeight: 0,
+  },
+};

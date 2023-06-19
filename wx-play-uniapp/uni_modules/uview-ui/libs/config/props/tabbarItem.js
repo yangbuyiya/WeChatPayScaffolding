@@ -10,13 +10,13 @@
  * @FilePath     : /u-view2.0/uview-ui/libs/config/props/tabbarItem.js
  */
 export default {
-    //
-    tabbarItem: {
-        name: null,
-        icon: '',
-        badge: null,
-        dot: false,
-        text: '',
-        badgeStyle: 'top: 6px;right:2px;'
-    }
-}
+  //
+  tabbarItem: {
+    name: null,
+    icon: "",
+    badge: null,
+    dot: false,
+    text: "",
+    badgeStyle: "top: 6px;right:2px;",
+  },
+};

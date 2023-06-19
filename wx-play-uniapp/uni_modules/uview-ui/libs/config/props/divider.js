@@ -10,16 +10,15 @@
  * @FilePath     : /u-view2.0/uview-ui/libs/config/props/divider.js
  */
 export default {
-    // divider组件
-    divider: {
-        dashed: false,
-        hairline: true,
-        dot: false,
-        textPosition: 'center',
-        text: '',
-        textSize: 14,
-        textColor: '#909399',
-        lineColor: '#dcdfe6'
-    }
-
-}
+  // divider组件
+  divider: {
+    dashed: false,
+    hairline: true,
+    dot: false,
+    textPosition: "center",
+    text: "",
+    textSize: 14,
+    textColor: "#909399",
+    lineColor: "#dcdfe6",
+  },
+};

@@ -10,8 +10,8 @@
  * @FilePath     : /u-view2.0/uview-ui/libs/config/props/swipeAction.js
  */
 export default {
-    // swipe-action组件
-    swipeAction: {
-        autoClose: true
-    }
-}
+  // swipe-action组件
+  swipeAction: {
+    autoClose: true,
+  },
+};

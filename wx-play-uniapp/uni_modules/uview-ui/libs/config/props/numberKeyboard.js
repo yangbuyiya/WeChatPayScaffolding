@@ -10,10 +10,10 @@
  * @FilePath     : /u-view2.0/uview-ui/libs/config/props/numberKeyboard.js
  */
 export default {
-    // 数字键盘
-    numberKeyboard: {
-        mode: 'number',
-        dotDisabled: false,
-        random: false
-    }
-}
+  // 数字键盘
+  numberKeyboard: {
+    mode: "number",
+    dotDisabled: false,
+    random: false,
+  },
+};

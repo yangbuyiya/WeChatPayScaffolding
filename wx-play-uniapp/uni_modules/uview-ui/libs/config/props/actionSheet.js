@@ -10,18 +10,18 @@
  * @FilePath     : /u-view2.0/uview-ui/libs/config/props/actionSheet.js
  */
 export default {
-    // action-sheet组件
-    actionSheet: {
-        show: false,
-        title: '',
-        description: '',
-        actions: () => [],
-        index: '',
-        cancelText: '',
-        closeOnClickAction: true,
-        safeAreaInsetBottom: true,
-        openType: '',
-        closeOnClickOverlay: true,
-        round: 0
-    }
-}
+  // action-sheet组件
+  actionSheet: {
+    show: false,
+    title: "",
+    description: "",
+    actions: () => [],
+    index: "",
+    cancelText: "",
+    closeOnClickAction: true,
+    safeAreaInsetBottom: true,
+    openType: "",
+    closeOnClickOverlay: true,
+    round: 0,
+  },
+};

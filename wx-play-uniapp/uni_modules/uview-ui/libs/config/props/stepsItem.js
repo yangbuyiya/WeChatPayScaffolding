@@ -10,11 +10,11 @@
  * @FilePath     : /u-view2.0/uview-ui/libs/config/props/stepsItem.js
  */
 export default {
-    // steps-item组件
-    stepsItem: {
-        title: '',
-        desc: '',
-        iconSize: 17,
-        error: false
-    }
-}
+  // steps-item组件
+  stepsItem: {
+    title: "",
+    desc: "",
+    iconSize: 17,
+    error: false,
+  },
+};

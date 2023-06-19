@@ -1,6 +1,6 @@
 // yangbuyi Copyright (c) https://yby6.com 2023.
 
-'use strict'
+"use strict";
 
 /**
  * Creates a new URL by combining the specified URLs
@@ -10,7 +10,7 @@
  * @returns {string} The combined URL
  */
 export default function combineURLs(baseURL, relativeURL) {
-    return relativeURL
-        ? `${baseURL.replace(/\/+$/, '')}/${relativeURL.replace(/^\/+/, '')}`
-        : baseURL
+  return relativeURL
+    ? `${baseURL.replace(/\/+$/, "")}/${relativeURL.replace(/^\/+/, "")}`
+    : baseURL;
 }

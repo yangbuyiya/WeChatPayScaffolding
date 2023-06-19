@@ -10,16 +10,16 @@
  * @FilePath     : /u-view2.0/uview-ui/libs/config/props/avatarGroup.js
  */
 export default {
-    // avatarGroup 组件
-    avatarGroup: {
-        urls: () => [],
-        maxCount: 5,
-        shape: 'circle',
-        mode: 'scaleToFill',
-        showMore: true,
-        size: 40,
-        keyName: '',
-        gap: 0.5,
-		extraValue: 0
-    }
-}
+  // avatarGroup 组件
+  avatarGroup: {
+    urls: () => [],
+    maxCount: 5,
+    shape: "circle",
+    mode: "scaleToFill",
+    showMore: true,
+    size: 40,
+    keyName: "",
+    gap: 0.5,
+    extraValue: 0,
+  },
+};

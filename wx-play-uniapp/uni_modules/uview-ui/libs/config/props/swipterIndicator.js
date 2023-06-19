@@ -10,12 +10,12 @@
  * @FilePath     : /u-view2.0/uview-ui/libs/config/props/swiperIndicator.js
  */
 export default {
-    // swiperIndicator 组件
-    swiperIndicator: {
-        length: 0,
-        current: 0,
-        indicatorActiveColor: '',
-        indicatorInactiveColor: '',
-		indicatorMode: 'line'
-    }
-}
+  // swiperIndicator 组件
+  swiperIndicator: {
+    length: 0,
+    current: 0,
+    indicatorActiveColor: "",
+    indicatorInactiveColor: "",
+    indicatorMode: "line",
+  },
+};

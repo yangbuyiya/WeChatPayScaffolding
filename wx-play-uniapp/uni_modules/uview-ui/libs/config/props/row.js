@@ -10,10 +10,10 @@
  * @FilePath     : /u-view2.0/uview-ui/libs/config/props/row.js
  */
 export default {
-    // row
-    row: {
-        gutter: 0,
-        justify: 'start',
-        align: 'center'
-    }
-}
+  // row
+  row: {
+    gutter: 0,
+    justify: "start",
+    align: "center",
+  },
+};

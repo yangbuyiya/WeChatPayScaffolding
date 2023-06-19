@@ -2,19 +2,19 @@
 
 ### 配套文章
 
--  [第一章从零玩转系列之微信支付开篇](https://www.yby6.com/archives/wechatpay02)
--  [第二章从零玩转系列之微信支付安全](https://www.yby6.com/archives/wechatpay01)
--  [第三章从零玩转系列之微信支付实战基础框架搭建](https://www.yby6.com/archives/wechatpay03)
--  [第四章从零玩转系列之微信支付实战PC端接口搭建](https://www.yby6.com/archives/wechat04)
--  [敬请期待................]
+- [第一章从零玩转系列之微信支付开篇](https://www.yby6.com/archives/wechatpay02)
+- [第二章从零玩转系列之微信支付安全](https://www.yby6.com/archives/wechatpay01)
+- [第三章从零玩转系列之微信支付实战基础框架搭建](https://www.yby6.com/archives/wechatpay03)
+- [第四章从零玩转系列之微信支付实战 PC 端接口搭建](https://www.yby6.com/archives/wechat04)
+- [敬请期待................]
 
 ### 介绍
 
 使用微信官方文档对接微信支付
 
-内置vue3+vite前端使用微信官方原生接口对接native v3 v2
+内置 vue3+vite 前端使用微信官方原生接口对接 native v3 v2
 
-内置小程序端 使用快速对接神器IJPay对接jsapi v3
+内置小程序端 使用快速对接神器 IJPay 对接 jsapi v3
 
 同步更新： 码云[GITEE](https://gitee.com/yangbuyi/wxDemo) 外国 [GITHUB](https://github.com/yangbuyiya/wxDemo)
 
@@ -44,18 +44,18 @@ java -jar CertificateDownloader.jar -k ${apiV3key} -m ${mchId} -f ${mchPrivateKe
 
 示例：
 
-java -jar CertificateDownloader-1.2.0-jar-with-dependencies.jar 
--k=商户v3key 
--m=商户ID 
--f=/Users/yangbuyi/Documents/workPath/workPath/wx-play-demo/src/main/resources/apiclient_key.pem 
--s=商户证书序列号 
+java -jar CertificateDownloader-1.2.0-jar-with-dependencies.jar
+-k=商户v3key
+-m=商户ID
+-f=/Users/yangbuyi/Documents/workPath/workPath/wx-play-demo/src/main/resources/apiclient_key.pem
+-s=商户证书序列号
 -o=/Users/yangbuyi/Documents/workPath/workPath/wx-play-demo/src/main/resources
 
 解释：
 
-java -jar CertificateDownloader-1.2.0-jar-with-dependencies.jar 
+java -jar CertificateDownloader-1.2.0-jar-with-dependencies.jar
 -k=这是对应配置文件当中的 APIV3Key（wxpay.api-v3-key）商户APIV3Key
--m=这是对应配置文件当中的 mchID （wxpay.mch-id） 商户ID 
+-m=这是对应配置文件当中的 mchID （wxpay.mch-id） 商户ID
 -f=这是对应配置文件当中到 商户证书 apiclient_key.pem  （绝对路径地址）
 -s=这是对应配置文件当中的 mchSerialNo（wxpay.mch-serial-no）商户平台证书序列号
 -o=这是将生成的文件输出到哪个目录下面 （绝对路径地址）
@@ -76,11 +76,11 @@ java -jar CertificateDownloader-1.2.0-jar-with-dependencies.jar
 <p> 1.1 前往 wxpay.properties 配置好对应的微信配置</p>
 <p> 1.2 前往 application.yml 配置好数据库链接信息
 
-### pc端配置
+### pc 端配置
 
 <p> 1. vite.config.js 配置你的后端请求url
 
-### uniapp小程序配置
+### uniapp 小程序配置
 
 <p> 1.1 使用 HBuilder软件导入wx-play-uniapp
 <p> 1.2 修改后端对应到appId 
@@ -89,7 +89,7 @@ java -jar CertificateDownloader-1.2.0-jar-with-dependencies.jar
 ### 本地支付回调调试
 
 1. 使用内网穿透工具代理后端端口
-2. 前段修改对应的baseUrl
+2. 前段修改对应的 baseUrl
 
 # 微信群聊
 
@@ -97,16 +97,15 @@ java -jar CertificateDownloader-1.2.0-jar-with-dependencies.jar
 
 <img src="https://foruda.gitee.com/images/1685673733774119250/fe04bfeb_5151444.png" width="300px" height="450px"  />
 
-# PC端演示
+# PC 端演示
 
 [前往](https://lzys522.cn/wx/)
 
 ![输入图片说明](https://foruda.gitee.com/images/1685673897693356870/89f3440f_5151444.png)
 
-# uniapp小程序演示
+# uniapp 小程序演示
 
 <img src="https://foruda.gitee.com/images/1685673930068447278/c20a6a06_5151444.png" width="300px" height="450px"   />
 <img src="https://foruda.gitee.com/images/1685673948311564004/1354febc_5151444.png" width="300px" height="450px"  />
 <img src="https://foruda.gitee.com/images/1685673968161079699/b1465aba_5151444.png" width="300px" height="450px"   />
 <img src="https://foruda.gitee.com/images/1685673988191687152/69f3b19b_5151444.png" width="300px" height="450px"   />
-

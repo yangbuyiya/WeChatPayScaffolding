@@ -13,10 +13,9 @@
 
 ## 说明
 
-uView UI，是[uni-app](https://uniapp.dcloud.io/)全面兼容nvue的uni-app生态框架，全面的组件和便捷的工具会让您信手拈来，如鱼得水
+uView UI，是[uni-app](https://uniapp.dcloud.io/)全面兼容 nvue 的 uni-app 生态框架，全面的组件和便捷的工具会让您信手拈来，如鱼得水
 
 ## [官方文档：https://uviewui.com](https://uviewui.com)
-
 
 ## 预览
 
@@ -24,7 +23,6 @@ uView UI，是[uni-app](https://uniapp.dcloud.io/)全面兼容nvue的uni-app生�
 <br>
 <br>
 <img src="https://uviewui.com/common/weixin_mini_qrcode.png" width="220" height="220" >
-
 
 ## 链接
 
@@ -35,16 +33,16 @@ uView UI，是[uni-app](https://uniapp.dcloud.io/)全面兼容nvue的uni-app生�
 
 ## 交流反馈
 
-欢迎加入我们的QQ群交流反馈：[点此跳转](https://www.uviewui.com/components/addQQGroup.html)
+欢迎加入我们的 QQ 群交流反馈：[点此跳转](https://www.uviewui.com/components/addQQGroup.html)
 
-## 关于PR
+## 关于 PR
 
-> 我们非常乐意接受各位的优质PR，但在此之前我希望您了解uView2.0是一个需要兼容多个平台的（小程序、h5、ios app、android app）包括nvue页面、vue页面。
-> 所以希望在您修复bug并提交之前尽可能的去这些平台测试一下兼容性。最好能携带测试截图以方便审核。非常感谢！
+> 我们非常乐意接受各位的优质 PR，但在此之前我希望您了解 uView2.0 是一个需要兼容多个平台的（小程序、h5、ios app、android app）包括 nvue 页面、vue 页面。
+> 所以希望在您修复 bug 并提交之前尽可能的去这些平台测试一下兼容性。最好能携带测试截图以方便审核。非常感谢！
 
 ## 安装
 
-#### **uni-app插件市场链接** —— [https://ext.dcloud.net.cn/plugin?id=1593](https://ext.dcloud.net.cn/plugin?id=1593)
+#### **uni-app 插件市场链接** —— [https://ext.dcloud.net.cn/plugin?id=1593](https://ext.dcloud.net.cn/plugin?id=1593)
 
 请通过[官网安装文档](https://www.uviewui.com/components/install.html)了解更详细的内容
 
@@ -53,14 +51,15 @@ uView UI，是[uni-app](https://uniapp.dcloud.io/)全面兼容nvue的uni-app生�
 请通过[快速上手](https://uviewui.com/components/quickstart.html)了解更详细的内容
 
 ## 使用方法
-配置easycom规则后，自动按需引入，无需`import`组件，直接引用即可。
+
+配置 easycom 规则后，自动按需引入，无需`import`组件，直接引用即可。
 
 ```html
 <template>
-	<u-button text="按钮"></u-button>
+  <u-button text="按钮"></u-button>
 </template>
 ```
 
 ## 版权信息
-uView遵循[MIT](https://en.wikipedia.org/wiki/MIT_License)开源协议，意味着您无需支付任何费用，也无需授权，即可将uView应用到您的产品中。
 
+uView 遵循[MIT](https://en.wikipedia.org/wiki/MIT_License)开源协议，意味着您无需支付任何费用，也无需授权，即可将 uView 应用到您的产品中。

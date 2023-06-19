@@ -10,14 +10,14 @@
  * @FilePath     : /u-view2.0/uview-ui/libs/config/props/swipeActionItem.js
  */
 export default {
-    // swipeActionItem 组件
-    swipeActionItem: {
-        show: false,
-        name: '',
-        disabled: false,
-        threshold: 20,
-        autoClose: true,
-        options: [],
-        duration: 300
-    }
-}
+  // swipeActionItem 组件
+  swipeActionItem: {
+    show: false,
+    name: "",
+    disabled: false,
+    threshold: 20,
+    autoClose: true,
+    options: [],
+    duration: 300,
+  },
+};

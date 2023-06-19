@@ -35,8 +35,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * JSAPI 支付 v3
- * <p>微信支付 v3 接口示例</p>
+ * IJPay JSAPI 支付 v3
+ * <p>IJPay 微信支付 v3 接口示例</p>
  *
  * @author yang shuai
  * @date 2022/11/19

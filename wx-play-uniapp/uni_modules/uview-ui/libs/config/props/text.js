@@ -10,31 +10,30 @@
  * @FilePath     : /u-view2.0/uview-ui/libs/config/props/text.js
  */
 export default {
-    // text 组件
-    text: {
-        type: '',
-        show: true,
-        text: '',
-        prefixIcon: '',
-        suffixIcon: '',
-        mode: '',
-        href: '',
-        format: '',
-        call: false,
-        openType: '',
-        bold: false,
-        block: false,
-        lines: '',
-        color: '#303133',
-        size: 15,
-        iconStyle: () => ({
-            fontSize: '15px'
-        }),
-        decoration: 'none',
-        margin: 0,
-        lineHeight: '',
-        align: 'left',
-        wordWrap: 'normal'
-    }
-
-}
+  // text 组件
+  text: {
+    type: "",
+    show: true,
+    text: "",
+    prefixIcon: "",
+    suffixIcon: "",
+    mode: "",
+    href: "",
+    format: "",
+    call: false,
+    openType: "",
+    bold: false,
+    block: false,
+    lines: "",
+    color: "#303133",
+    size: 15,
+    iconStyle: () => ({
+      fontSize: "15px",
+    }),
+    decoration: "none",
+    margin: 0,
+    lineHeight: "",
+    align: "left",
+    wordWrap: "normal",
+  },
+};

@@ -1,31 +1,31 @@
 <!-- yangbuyi Copyright (c) https://yby6.com 2023. -->
 
 <template>
-    <uvText
-        :type="type"
-        :show="show"
-        :text="text"
-        :prefixIcon="prefixIcon"
-        :suffixIcon="suffixIcon"
-        :mode="mode"
-        :href="href"
-        :format="format"
-        :call="call"
-        :openType="openType"
-        :bold="bold"
-        :block="block"
-        :lines="lines"
-        :color="color"
-		:decoration="decoration"
-        :size="size"
-        :iconStyle="iconStyle"
-        :margin="margin"
-        :lineHeight="lineHeight"
-        :align="align"
-        :wordWrap="wordWrap"
-        :customStyle="customStyle"
-        @click="$emit('click')"
-    ></uvText>
+  <uvText
+    :type="type"
+    :show="show"
+    :text="text"
+    :prefixIcon="prefixIcon"
+    :suffixIcon="suffixIcon"
+    :mode="mode"
+    :href="href"
+    :format="format"
+    :call="call"
+    :openType="openType"
+    :bold="bold"
+    :block="block"
+    :lines="lines"
+    :color="color"
+    :decoration="decoration"
+    :size="size"
+    :iconStyle="iconStyle"
+    :margin="margin"
+    :lineHeight="lineHeight"
+    :align="align"
+    :wordWrap="wordWrap"
+    :customStyle="customStyle"
+    @click="$emit('click')"
+  ></uvText>
 </template>
 
 <script>
@@ -37,10 +37,10 @@
 import uvText from "../u-text/u-text.vue";
 import props from "../u-text/props.js";
 export default {
-    name: "u--text",
-    mixins: [uni.$u.mpMixin, props, uni.$u.mixin],
-    components: {
-        uvText,
-    },
+  name: "u--text",
+  mixins: [uni.$u.mpMixin, props, uni.$u.mixin],
+  components: {
+    uvText,
+  },
 };
 </script>
