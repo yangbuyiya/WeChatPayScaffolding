@@ -10,8 +10,8 @@
  * @FilePath     : /u-view2.0/uview-ui/libs/config/props/carKeyboard.js
  */
 export default {
-    // 车牌号键盘
-    carKeyboard: {
-        random: false
-    }
-}
+  // 车牌号键盘
+  carKeyboard: {
+    random: false,
+  },
+};

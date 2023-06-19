@@ -10,16 +10,16 @@
  * @FilePath     : /u-view2.0/uview-ui/libs/config/props/loadingPage.js
  */
 export default {
-    // loading-page组件
-    loadingPage: {
-        loadingText: '正在加载',
-        image: '',
-        loadingMode: 'circle',
-        loading: false,
-        bgColor: '#ffffff',
-        color: '#C8C8C8',
-        fontSize: 19,
-        iconSize: 28,
-        loadingColor: '#C8C8C8'
-    }
-}
+  // loading-page组件
+  loadingPage: {
+    loadingText: "正在加载",
+    image: "",
+    loadingMode: "circle",
+    loading: false,
+    bgColor: "#ffffff",
+    color: "#C8C8C8",
+    fontSize: 19,
+    iconSize: 28,
+    loadingColor: "#C8C8C8",
+  },
+};

@@ -1,9 +1,9 @@
 // yangbuyi Copyright (c) https://yby6.com 2023.
 
-'use strict'
+"use strict";
 
 function InterceptorManager() {
-    this.handlers = []
+  this.handlers = [];
 }
 
 /**
@@ -15,12 +15,12 @@ function InterceptorManager() {
  * @return {Number} An ID used to remove interceptor later
  */
 InterceptorManager.prototype.use = function use(fulfilled, rejected) {
-    this.handlers.push({
-        fulfilled,
-        rejected
-    })
-    return this.handlers.length - 1
-}
+  this.handlers.push({
+    fulfilled,
+    rejected,
+  });
+  return this.handlers.length - 1;
+};
 
 /**
  * Remove an interceptor from the stack
@@ -28,10 +28,10 @@ InterceptorManager.prototype.use = function use(fulfilled, rejected) {
  * @param {Number} id The ID that was returned by `use`
  */
 InterceptorManager.prototype.eject = function eject(id) {
-    if (this.handlers[id]) {
-        this.handlers[id] = null
-    }
-}
+  if (this.handlers[id]) {
+    this.handlers[id] = null;
+  }
+};
 
 /**
  * Iterate over all the registered interceptors
@@ -42,11 +42,11 @@ InterceptorManager.prototype.eject = function eject(id) {
  * @param {Function} fn The function to call for each interceptor
  */
 InterceptorManager.prototype.forEach = function forEach(fn) {
-    this.handlers.forEach((h) => {
-        if (h !== null) {
-            fn(h)
-        }
-    })
-}
+  this.handlers.forEach((h) => {
+    if (h !== null) {
+      fn(h);
+    }
+  });
+};
 
-export default InterceptorManager
+export default InterceptorManager;

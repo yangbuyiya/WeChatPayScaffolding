@@ -10,12 +10,12 @@
  * @FilePath     : /u-view2.0/uview-ui/libs/config/props/gap.js
  */
 export default {
-    // gap组件
-    gap: {
-        bgColor: 'transparent',
-        height: 20,
-        marginTop: 0,
-        marginBottom: 0,
-        customStyle: {}
-    }
-}
+  // gap组件
+  gap: {
+    bgColor: "transparent",
+    height: 20,
+    marginTop: 0,
+    marginBottom: 0,
+    customStyle: {},
+  },
+};

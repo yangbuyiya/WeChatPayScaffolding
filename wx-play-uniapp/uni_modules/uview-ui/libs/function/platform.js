@@ -8,70 +8,70 @@
  * }
  */
 
-let platform = 'none'
+let platform = "none";
 
 // #ifdef VUE3
-platform = 'vue3'
+platform = "vue3";
 // #endif
 
 // #ifdef VUE2
-platform = 'vue2'
+platform = "vue2";
 // #endif
 
 // #ifdef APP-PLUS
-platform = 'plus'
+platform = "plus";
 // #endif
 
 // #ifdef APP-NVUE
-platform = 'nvue'
+platform = "nvue";
 // #endif
 
 // #ifdef H5
-platform = 'h5'
+platform = "h5";
 // #endif
 
 // #ifdef MP-WEIXIN
-platform = 'weixin'
+platform = "weixin";
 // #endif
 
 // #ifdef MP-ALIPAY
-platform = 'alipay'
+platform = "alipay";
 // #endif
 
 // #ifdef MP-BAIDU
-platform = 'baidu'
+platform = "baidu";
 // #endif
 
 // #ifdef MP-TOUTIAO
-platform = 'toutiao'
+platform = "toutiao";
 // #endif
 
 // #ifdef MP-QQ
-platform = 'qq'
+platform = "qq";
 // #endif
 
 // #ifdef MP-KUAISHOU
-platform = 'kuaishou'
+platform = "kuaishou";
 // #endif
 
 // #ifdef MP-360
-platform = '360'
+platform = "360";
 // #endif
 
 // #ifdef MP
-platform = 'mp'
+platform = "mp";
 // #endif
 
 // #ifdef QUICKAPP-WEBVIEW
-platform = 'quickapp-webview'
+platform = "quickapp-webview";
 // #endif
 
 // #ifdef QUICKAPP-WEBVIEW-HUAWEI
-platform = 'quickapp-webview-huawei'
+platform = "quickapp-webview-huawei";
 // #endif
 
 // #ifdef QUICKAPP-WEBVIEW-UNION
-platform = 'quckapp-webview-union'
+platform = "quckapp-webview-union";
 // #endif
 
-export default platform
+export default platform;

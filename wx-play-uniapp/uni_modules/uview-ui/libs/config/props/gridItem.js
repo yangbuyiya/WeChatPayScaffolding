@@ -10,9 +10,9 @@
  * @FilePath     : /u-view2.0/uview-ui/libs/config/props/gridItem.js
  */
 export default {
-    // grid-item组件
-    gridItem: {
-        name: null,
-        bgColor: 'transparent'
-    }
-}
+  // grid-item组件
+  gridItem: {
+    name: null,
+    bgColor: "transparent",
+  },
+};

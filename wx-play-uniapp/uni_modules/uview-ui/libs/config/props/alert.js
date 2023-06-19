@@ -10,15 +10,15 @@
  * @FilePath     : /u-view2.0/uview-ui/libs/config/props/alert.js
  */
 export default {
-    // alert警告组件
-    alert: {
-        title: '',
-        type: 'warning',
-        description: '',
-        closable: false,
-        showIcon: false,
-        effect: 'light',
-        center: false,
-        fontSize: 14
-    }
-}
+  // alert警告组件
+  alert: {
+    title: "",
+    type: "warning",
+    description: "",
+    closable: false,
+    showIcon: false,
+    effect: "light",
+    center: false,
+    fontSize: 14,
+  },
+};

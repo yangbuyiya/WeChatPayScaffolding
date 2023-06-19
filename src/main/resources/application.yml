@@ -30,7 +30,6 @@ spring:
       # 允许对象忽略json中不存在的属性
       fail_on_unknown_properties: false
 
-
 mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true
@@ -64,4 +63,3 @@ redis:
       max-idle: 10
       # 连接池中的最小空闲连接
       min-idle: 0
-

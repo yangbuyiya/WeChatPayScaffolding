@@ -10,14 +10,14 @@
  * @FilePath     : /u-view2.0/uview-ui/libs/config/props/rowNotice.js
  */
 export default {
-    // rowNotice
-    rowNotice: {
-        text: '',
-        icon: 'volume',
-        mode: '',
-        color: '#f9ae3d',
-        bgColor: '#fdf6ec',
-        fontSize: 14,
-        speed: 80
-    }
-}
+  // rowNotice
+  rowNotice: {
+    text: "",
+    icon: "volume",
+    mode: "",
+    color: "#f9ae3d",
+    bgColor: "#fdf6ec",
+    fontSize: 14,
+    speed: 80,
+  },
+};

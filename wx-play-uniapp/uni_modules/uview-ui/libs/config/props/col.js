@@ -10,12 +10,12 @@
  * @FilePath     : /u-view2.0/uview-ui/libs/config/props/col.js
  */
 export default {
-    // col 组件
-    col: {
-        span: 12,
-        offset: 0,
-        justify: 'start',
-        align: 'stretch',
-        textAlign: 'left'
-    }
-}
+  // col 组件
+  col: {
+    span: 12,
+    offset: 0,
+    justify: "start",
+    align: "stretch",
+    textAlign: "left",
+  },
+};

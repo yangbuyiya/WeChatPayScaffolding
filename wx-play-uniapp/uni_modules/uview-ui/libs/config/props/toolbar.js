@@ -10,14 +10,13 @@
  * @FilePath     : /u-view2.0/uview-ui/libs/config/props/toolbar.js
  */
 export default {
-    // toolbar 组件
-    toolbar: {
-        show: true,
-        cancelText: '取消',
-        confirmText: '确认',
-        cancelColor: '#909193',
-        confirmColor: '#3c9cff',
-        title: ''
-    }
-
-}
+  // toolbar 组件
+  toolbar: {
+    show: true,
+    cancelText: "取消",
+    confirmText: "确认",
+    cancelColor: "#909193",
+    confirmColor: "#3c9cff",
+    title: "",
+  },
+};

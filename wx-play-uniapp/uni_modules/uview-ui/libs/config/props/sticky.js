@@ -10,13 +10,13 @@
  * @FilePath     : /u-view2.0/uview-ui/libs/config/props/sticky.js
  */
 export default {
-    // sticky组件
-    sticky: {
-        offsetTop: 0,
-        customNavHeight: 0,
-        disabled: false,
-        bgColor: 'transparent',
-        zIndex: '',
-        index: ''
-    }
-}
+  // sticky组件
+  sticky: {
+    offsetTop: 0,
+    customNavHeight: 0,
+    disabled: false,
+    bgColor: "transparent",
+    zIndex: "",
+    index: "",
+  },
+};

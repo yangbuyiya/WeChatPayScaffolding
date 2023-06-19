@@ -10,11 +10,11 @@
  * @FilePath     : /u-view2.0/uview-ui/libs/config/props/countDown.js
  */
 export default {
-    // u-count-down 计时器组件
-    countDown: {
-        time: 0,
-        format: 'HH:mm:ss',
-        autoStart: true,
-        millisecond: false
-    }
-}
+  // u-count-down 计时器组件
+  countDown: {
+    time: 0,
+    format: "HH:mm:ss",
+    autoStart: true,
+    millisecond: false,
+  },
+};

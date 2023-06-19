@@ -10,10 +10,10 @@
  * @FilePath     : /u-view2.0/uview-ui/libs/config/props/cellGroup.js
  */
 export default {
-    // cell-group组件的props
-    cellGroup: {
-        title: '',
-        border: true,
-        customStyle: {}
-    }
-}
+  // cell-group组件的props
+  cellGroup: {
+    title: "",
+    border: true,
+    customStyle: {},
+  },
+};

@@ -1,9 +1,9 @@
 // yangbuyi Copyright (c) https://yby6.com 2023.
 
-'use strict'
+"use strict";
 
-import isAbsoluteURL from '../helpers/isAbsoluteURL'
-import combineURLs from '../helpers/combineURLs'
+import isAbsoluteURL from "../helpers/isAbsoluteURL";
+import combineURLs from "../helpers/combineURLs";
 
 /**
  * Creates a new URL by combining the baseURL with the requestedURL,
@@ -15,8 +15,8 @@ import combineURLs from '../helpers/combineURLs'
  * @returns {string} The combined full path
  */
 export default function buildFullPath(baseURL, requestedURL) {
-    if (baseURL && !isAbsoluteURL(requestedURL)) {
-        return combineURLs(baseURL, requestedURL)
-    }
-    return requestedURL
+  if (baseURL && !isAbsoluteURL(requestedURL)) {
+    return combineURLs(baseURL, requestedURL);
+  }
+  return requestedURL;
 }

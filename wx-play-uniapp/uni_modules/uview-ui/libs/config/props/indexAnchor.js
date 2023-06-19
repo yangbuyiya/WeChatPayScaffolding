@@ -10,12 +10,12 @@
  * @FilePath     : /u-view2.0/uview-ui/libs/config/props/indexAnchor.js
  */
 export default {
-    // indexAnchor 组件
-    indexAnchor: {
-        text: '',
-        color: '#606266',
-        size: 14,
-        bgColor: '#dedede',
-        height: 32
-    }
-}
+  // indexAnchor 组件
+  indexAnchor: {
+    text: "",
+    color: "#606266",
+    size: 14,
+    bgColor: "#dedede",
+    height: 32,
+  },
+};

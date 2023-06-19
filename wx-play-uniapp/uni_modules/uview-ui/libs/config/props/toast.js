@@ -10,23 +10,22 @@
  * @FilePath     : /u-view2.0/uview-ui/libs/config/props/toast.js
  */
 export default {
-    // toast组件
-    toast: {
-        zIndex: 10090,
-        loading: false,
-        text: '',
-        icon: '',
-        type: '',
-        loadingMode: '',
-        show: '',
-        overlay: false,
-        position: 'center',
-        params: () => {},
-        duration: 2000,
-        isTab: false,
-        url: '',
-        callback: null,
-        back: false
-    }
-
-}
+  // toast组件
+  toast: {
+    zIndex: 10090,
+    loading: false,
+    text: "",
+    icon: "",
+    type: "",
+    loadingMode: "",
+    show: "",
+    overlay: false,
+    position: "center",
+    params: () => {},
+    duration: 2000,
+    isTab: false,
+    url: "",
+    callback: null,
+    back: false,
+  },
+};

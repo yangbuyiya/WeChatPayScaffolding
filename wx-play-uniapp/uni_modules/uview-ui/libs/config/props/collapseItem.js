@@ -10,18 +10,18 @@
  * @FilePath     : /u-view2.0/uview-ui/libs/config/props/collapseItem.js
  */
 export default {
-    // collapseItem 组件
-    collapseItem: {
-        title: '',
-        value: '',
-        label: '',
-        disabled: false,
-        isLink: true,
-        clickable: true,
-        border: true,
-        align: 'left',
-        name: '',
-        icon: '',
-        duration: 300
-    }
-}
+  // collapseItem 组件
+  collapseItem: {
+    title: "",
+    value: "",
+    label: "",
+    disabled: false,
+    isLink: true,
+    clickable: true,
+    border: true,
+    align: "left",
+    name: "",
+    icon: "",
+    duration: 300,
+  },
+};
