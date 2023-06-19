@@ -98,7 +98,7 @@ public class WxSignUtil<T> {
 
     /**
      * 解密 对称解密
-     *
+     * 参考： <a href="https://github.com/wechatpay-apiv3/wechatpay-apache-httpclient/blob/master/src/main/java/com/wechat/pay/contrib/apache/httpclient/util/AesUtil.java">...</a>
      * @param plainText 秘文
      * @return {@link String}
      */
