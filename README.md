@@ -29,9 +29,14 @@
 1. 将商户证书全部复制到**resources**目录下
 2. **如果你想使用IJPay则需要** 下载微信平台证书（不是商户证书）
 
-> 注意：本项目使用com.github.wechatpay-apiv3官方原生依赖里面处理了证书自动同步更新我们不需要配置
 
-#### 2.1 Certificate Downloader
+> ☠ 注意：本项目当中有两个案例
+> 
+> IJPay对比 JSAPI V3 的用法 需要手动下载(微信平台证书)
+> 
+> 使用com.github.wechatpay-apiv3官方原生依赖里面处理了证书自动同步更新我们不需要配置 可不需要自己手动下载微信平台证书
+
+#### 2.1 Certificate Downloader (微信平台证书)
 
 Certificate Downloader 是 Java 微信支付 APIv3 平台证书的命令行下载工具。
 

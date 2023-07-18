@@ -23,7 +23,7 @@ import java.security.PrivateKey;
 
 
 @Configuration
-@PropertySource("classpath:wxpay.properties") //读取配置文件
+@PropertySource("classpath:wechat/wxpay.properties") //读取配置文件
 @ConfigurationProperties(prefix = "wxpay") //读取wxpay节点
 @Data //使用set方法将wxpay节点中的值填充到当前类的属性中
 @Slf4j
@@ -151,24 +151,5 @@ public class WxPayConfig {
 
         return httpClient;
     }
-
-//    @Bean
-//    public Config getConfig () {
-//        // 初始化商户配置
-////        return new RSAConfig.Builder()
-////                .merchantId(mchId)
-////                // 使用 com.wechat.pay.java.core.util 中的函数从本地文件中加载商户私钥，商户私钥会用来生成请求的签名
-////                .privateKeyFromPath(privateKeyPath)
-////                .merchantSerialNumber(mchSerialNo)
-////                .wechatPayCertificatesFromPath(privateKeyPath)
-////                .build();
-//
-//        return new RSAAutoCertificateConfig.Builder()
-//                        .merchantId(mchId)
-//                        .privateKey(getPrivateKey(privateKeyPath))
-//                        .merchantSerialNumber(mchSerialNo)
-//                        .apiV3Key(apiV3Key)
-//                        .build();
-//    }
 
 }
