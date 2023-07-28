@@ -11,9 +11,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.yby6</groupId>
-    <artifactId>wx-play-demo</artifactId>
+    <artifactId>WeChatPayScaffolding</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>wx-play-demo</name>
+    <name>WeChatPayScaffolding</name>
     <description>杨不易呀 https://yby6.com</description>
     <properties>
         <java.version>1.8</java.version>

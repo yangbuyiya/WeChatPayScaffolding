@@ -152,7 +152,7 @@ public class wxJsApiPayController {
             response.getOutputStream().write(JSONUtil.toJsonStr(map).getBytes(StandardCharsets.UTF_8));
             response.flushBuffer();
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("支付通知异常", e);
         }
         return map;
     }

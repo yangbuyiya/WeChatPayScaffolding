@@ -47,7 +47,7 @@ public class WxPayController {
 
     @ApiOperation("支付通知->微信支付通过支付通知接口将用户支付成功消息通知给商户")
     @PostMapping("/native/notify")
-    public String nativeNotify(HttpServletRequest request, HttpServletResponse response) throws InterruptedException {
+    public String nativeNotify(HttpServletRequest request, HttpServletResponse response) {
         log.info("接收到微信服务回调......");
         Map<String, String> map = new HashMap<>();// 应答对象，给微信服务答复是否通知成功
 
@@ -79,7 +79,7 @@ public class WxPayController {
             map.put("message", "成功");
             return GsonUtils.toJsonStr(map);
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("回调业务处理失败", e);
             //失败应答
             response.setStatus(500);
             map.put("code", "FAIL");
@@ -102,10 +102,6 @@ public class WxPayController {
 
     /**
      * 查询订单
-     *
-     * @param orderNo
-     * @return
-     * @throws Exception
      */
     @ApiOperation("查询订单：测试订单状态用")
     @GetMapping("/query/{orderNo}")
@@ -128,10 +124,6 @@ public class WxPayController {
 
     /**
      * 查询退款
-     *
-     * @param refundNo
-     * @return
-     * @throws Exception
      */
     @ApiOperation("查询退款：测试用")
     @GetMapping("/query-refund/{refundNo}")
@@ -185,7 +177,7 @@ public class WxPayController {
             map.put("message", "成功");
             return gson.toJson(map);
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("回调业务处理失败", e);
             //失败应答
             response.setStatus(500);
             map.put("code", "ERROR");
