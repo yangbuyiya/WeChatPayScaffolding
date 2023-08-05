@@ -76,6 +76,18 @@
                         type="info"
                       ></u-tag>
                     </view>
+                    <!-- 倒计时超时订单取消 -->
+                    <view style="display: inline-block" v-if="item.orderStatus === '未支付'">
+                      <u-count-down
+                          :time="calculateTimeDifference(item.createTime)"
+                          format="HH:mm:ss"
+                          autoStart
+                          millisecond
+                          @finish="finish(item)"
+                      >
+                      </u-count-down>
+                    </view>
+
                   </view>
                 </view>
                 <view>
@@ -178,6 +190,7 @@
 import orderInfoApi from "@/api/orderInfo";
 import { cancel, jsapi, refunds } from "@/api/wechatPay";
 import { toast } from "@/utils/common";
+import throttle from "@/utils/throttle";
 
 export default {
   data() {
@@ -237,6 +250,27 @@ export default {
     this.$refs.uForm.setRules(this.rules);
   },
   methods: {
+    // 计算时间差
+    calculateTimeDifference(createTime) {
+      const creationTime = new Date(createTime);
+      // 比后端早要不然后端会浪费资源重新查一下 2分钟倒计时
+      creationTime.setMinutes(creationTime.getMinutes() + 2);
+      const currentTime = new Date();
+      return Math.max(creationTime - currentTime, 0);
+    },
+    // 倒计时结束的触发
+    finish(item) {
+      throttle(() => {
+        // 发起关闭订单
+        orderInfoApi.orderTimeout(item.orderNo).then(res => {
+          this.$nextTick(() => {
+            console.log(res);
+            this.loadmore()
+          })
+        })
+        console.log('finish');
+      })
+    },
     reloadTitle(item) {
       return "《" + item + "》";
     },
@@ -262,10 +296,10 @@ export default {
         return;
       }
       this.loading = true;
-      // if ([undefined, null, ''].includes(this.refundNo) || this.refundNo.length < 4) {
-      //     toast("请输入四位交易订单号")
-      //     return
-      // }
+      if ([undefined, null, ''].includes(this.refundNo) || this.refundNo.length < 4) {
+          toast("请输入四位交易订单号")
+          return
+      }
       console.log(this.refundForm);
       this.$refs.uForm
         .validate()
