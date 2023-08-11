@@ -5,7 +5,11 @@
 - [第一章从零玩转系列之微信支付开篇](https://www.yby6.com/archives/wechatpay02)
 - [第二章从零玩转系列之微信支付安全](https://www.yby6.com/archives/wechatpay01)
 - [第三章从零玩转系列之微信支付实战基础框架搭建](https://www.yby6.com/archives/wechatpay03)
-- [第四章从零玩转系列之微信支付实战 PC 端接口搭建](https://www.yby6.com/archives/wechat04)
+- [第四章从零玩转系列之微信支付实战PC端支付下单接口搭建](https://www.yby6.com/archives/wechat04)
+- [第五章从零玩转系列之微信支付实战PC端支付微信回调接口搭建](https://www.yby6.com/archives/wechat04)
+- [第五章从零玩转系列之微信支付实战PC端支付微信取消订单接口搭建](https://www.yby6.com/archives/wechat06)
+- [第六章从零玩转系列之微信支付实战PC端支付微信退款订单接口搭建](https://www.yby6.com/archives/wechat07)
+- [第七章从零玩转系列之微信支付实战PC端项目构建Vue3+Vite+页面基础搭建](https://www.yby6.com/archives/wechat08)
 - [敬请期待................]
 
 ### 介绍
